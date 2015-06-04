@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Status:
+  = @state.status
+%p
+  %b Remark:
+  = @state.remark
+
+= link_to 'Edit', edit_state_path(@state)
+\|
+= link_to 'Back', states_path

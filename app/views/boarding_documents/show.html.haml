@@ -1,0 +1,45 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @boarding_document.name
+%p
+  %b Gender:
+  = @boarding_document.gender
+%p
+  %b Position:
+  = @boarding_document.position
+%p
+  %b Birthday:
+  = @boarding_document.birthday
+%p
+  %b Birthday place:
+  = @boarding_document.birthday_place
+%p
+  %b Passport:
+  = @boarding_document.passport
+%p
+  %b Port:
+  = @boarding_document.port
+%p
+  %b Flight ticket:
+  = @boarding_document.flight_ticket
+%p
+  %b Is flight:
+  = @boarding_document.is_flight
+%p
+  %b Time arrive:
+  = @boarding_document.time_arrive
+%p
+  %b Status:
+  = @boarding_document.status_id
+%p
+  %b User:
+  = @boarding_document.user
+%p
+  %b Remark:
+  = @boarding_document.remark
+
+= link_to 'Edit', edit_boarding_document_path(@boarding_document)
+\|
+= link_to 'Back', boarding_documents_path

@@ -1,0 +1,37 @@
+%h1 Listing ports
+
+%table
+  %tr
+    %th Port code
+    %th Name
+    %th Geo
+    %th Country
+    %th
+    %th
+    %th
+
+  - @ports.each do |port|
+    %tr
+      %td= port.port_code
+      %td= port.name
+      %td= port.geo
+      %td= port.country.name
+      %td= link_to 'Show', port
+      %td= link_to 'Edit', edit_port_path(port)
+      %td= link_to 'Destroy', port, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Port', new_port_path
+
+
+%table#ports.display{"data-source"=> ports_url(format: "json") }
+  %thead
+    %tr
+      %th Product Name
+      %th Category
+      %th Release Date
+      %th Price
+  %tbody
+
+

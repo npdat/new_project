@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b MailEm
+  = @user.email
+%p
+  %b Password:
+  = @user.password
+%p
+  %b Signature:
+  = @user.user_signature
+
+= link_to 'Edit', edit_manage_user_path(@user)
+\|
+= link_to 'Back', manage_users_path

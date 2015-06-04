@@ -1,0 +1,12 @@
+.single
+  #no-more-tables
+    %table.table.table-striped.borderless{:cellspacing=>'0', :width=>"100%"}
+      %tbody
+        %tr
+          %td{"data-title"=>"Name"}= batches[0][:name]
+          %td{"data-title"=>"Gender"}= batches[0][:gender]
+          %td{"data-title"=>"Position"}= batches[0][:position]
+          %td{"data-title"=>"Birthday"}= batches[0][:birthday]
+          %td{"data-title"=>"Birthday Place"}= batches[0][:birthday_place]
+          %td{"data-title"=>"Passpport"}= batches[0][:passport]
+          %td= link_to 'Details', '#', class: "btn btn-link btn-xs"

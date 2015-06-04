@@ -1,0 +1,21 @@
+= form_for @port do |f|
+  - if @port.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@port.errors.count, "error")} prohibited this port from being saved:"
+      %ul
+        - @port.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :country
+    = f.collection_select :country_id, Country.all, :id, :name
+  .field
+    = f.label :port_code
+    = f.text_field :port_code
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :geo
+    = f.text_field :geo
+  .actions
+    = f.submit 'Save'

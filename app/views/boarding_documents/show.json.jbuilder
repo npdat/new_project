@@ -1,0 +1,1 @@
+json.extract! @boarding_document, :id, :name, :gender, :position, :birthday, :birthday_place, :passport, :port_id, :flight_ticket, :is_flight, :time_arrive, :status_id, :user_id, :remark, :created_at, :updated_at

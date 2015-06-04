@@ -1,0 +1,134 @@
+:javascript
+  $(document).ready(function () {
+
+    $('#radioBtn a').on('click', function () {
+      var sel = $(this).data('title');
+      var tog = $(this).data('toggle');
+      //$('#' + tog).prop('value', sel);
+
+      $('a[data-toggle="' + tog + '"]').not('[data-title="' + sel + '"]').removeClass('active').addClass('notActive');
+      $('a[data-toggle="' + tog + '"][data-title="' + sel + '"]').removeClass('notActive').addClass('active');
+    });
+  });
+
+.panel-body
+  #radioBtn.btn-group.pull-right
+    %a#cd-radio-1.btn.btn-primary.btn-sm.active{"data-toggle" => "happy", "data-title" => "Y", :onclick => "show_single()"} Single
+    %a#cd-radio-1.btn.btn-primary.btn-sm.notActive{"data-toggle" => "happy", "data-title" => "N", :onclick => "show_batch()"} Batch
+  %br
+  %br
+
+  .tabcontent1#view_single
+    .wrap-content
+      <!--form input data------------------------------------------------------------------->
+      %form.contact_form{:action =>"", :method => "post", :name => "contact_form"}
+        %ul
+          %li
+            %h2 Single
+            %span.required_notification * Denotes Required Field
+          %li
+            %label{:for => "name"} Name
+            %span.required_input (*)
+            %input{:type => "text", :name => "name", :placeholder => "John Doe"}
+          %li
+            %label{:for =>"WallemCrewIDCardNo"} Wallem Crew ID
+            %span.required_input (*)
+            %input{:type =>"text", :name => "WallemCrewIDCardNo", :placeholder => "060050003903"}
+          %li
+            %label{:for=>"PassportNo"} Passport Numbers
+            %span.required_input (*)
+            %input{:type=>"text", :name=>"PassportNo", :placeholder=>"Z1974327"}
+          %li
+            %label{:for=>"email"} Email
+            %span.required_input (*)
+            %input{:type=>"text", :name=>"Email", :placeholder=>"Email", :pattern=>".+.+"}
+            %span.form_hint Proper format "user@wallem.com
+          %li
+            %label{:for=>"website"} Website
+            %span.required_input (*)
+            %input{:type=>"text", :name=>"website", :placeholder=>"http://johndoe.com/", :pattern=>"(http|https)://.+"}
+            %span.form_hint Proper format "http://someaddress.com"
+          %li
+            %label{:for=>"message"} Message:
+            %textarea{:name=>"message", :cols=>"40", :rows=>"6"}
+          %li
+            %button.submit{:type=>"submit"} Send
+
+  .tabcontent1#view_batch
+    .wrap-content
+      <!--form input data------------------------------------------------------------------->
+      %form.contact_form{:action =>"", :method => "post", :name => "contact_form"}
+        %ul
+          %li
+            %h2 Single
+            %span.required_notification * Denotes Required Field
+          %li
+            %label{:for => "name"} Name
+            %span.required_input (*)
+            %input{:type => "text", :name => "name", :placeholder => "John Doe"}
+          %li
+            %label{:for =>"WallemCrewIDCardNo"} Wallem Crew ID
+            %span.required_input (*)
+            %input{:type =>"text", :name => "WallemCrewIDCardNo", :placeholder => "060050003903"}
+          %li
+            %label{:for=>"PassportNo"} Passport Numbers
+            %span.required_input (*)
+            %input{:type=>"text", :name=>"PassportNo", :placeholder=>"Z1974327"}
+          %li
+            %label{:for=>"email"} Email
+            %span.required_input (*)
+            %input{:type=>"text", :name=>"Email", :placeholder=>"Email", :pattern=>".+.+"}
+            %span.form_hint Proper format "user@wallem.com
+          %li
+            %label{:for=>"website"} Website
+            %span.required_input (*)
+            %input{:type=>"text", :name=>"website", :placeholder=>"http://johndoe.com/", :pattern=>"(http|https)://.+"}
+            %span.form_hint Proper format "http://someaddress.com"
+          %li
+            %label{:for=>"message"} Message:
+            %textarea{:name=>"message", :cols=>"40", :rows=>"6"}
+          %li
+            %button.submit{:type=>"submit"} Add Crew
+
+      %form.submit_form{:action=>"", :method=>"post", :name=>"submit_form"}
+        #no-more-tables
+          %table#table-batch.table.table-striped{:cellspacing=>'0', :width=>"100%"}
+            %thead
+              %tr
+                %th Name
+                %th Wallem Crew ID Card
+                %th Passport Numbers
+                %th Email
+                %th Website
+                %th Message
+            %tbody
+            %tr
+              %td{"data-title"=>"Name"} IRSHAD KHANCHEY JAVID
+              %td{"data-title"=>"ID Card"} 060050003903
+              %td{"data-title"=>"Passport"} Z1974327
+              %td{"data-title"=>"Email"} irshad@wallem.com
+              %td{"data-title"=>"Website"} wallem.com
+              %td{"data-title"=>"Message"} do something
+            %tr.even
+              %td{"data-title"=>"Name"} ELEGIO JR ACAC OJEDA
+              %td{"data-title"=>"ID Card"} 060040008926
+              %td{"data-title"=>"Passport"} EB1986710
+              %td{"data-title"=>"Email"} elegio@wallem.com
+              %td{"data-title"=>"Website"} wallem.com
+              %td{"data-title"=>"Message"} Yes
+            %tr
+              %td{"data-title"=>"Name"} JOSE JR SHOTWELL PACIENTE
+              %td{"data-title"=>"ID Card"} 060030005542
+              %td{"data-title"=>"Passport"} EB5849842
+              %td{"data-title"=>"Email"} jose@wallem.com
+              %td{"data-title"=>"Website"} wallem.com
+              %td{"data-title"=>"Message"} do something
+            %tr.even
+              %td{"data-title"=>"Name"} KENNETH ENTILA MORANO
+              %td{"data-title"=>"ID Card"} 060040010651
+              %td{"data-title"=>"Passport"} EC2043328
+              %td{"data-title"=>"Email"} kenneth@wallem.com
+              %td{"data-title"=>"Website"} wallem.com
+              %td{"data-title"=>"Message"} No
+        .submit{:style=>'margin: 10px 0 10px 10px;'}
+          %button.submit{:type=>"submit"} Send

@@ -1,0 +1,28 @@
+.panel-heading
+  .panel-title Manage users
+.panel-body
+  = link_to 'New Manage user', new_manage_user_path, class: 'btn btn-default pull-right', type: 'button', style: "margin: 0 30px;"
+  %br
+  %br
+  #no-more-tables
+    %table#table-batch.table.table-striped{:cellspacing=>'0', :width=>"100%"}
+      %thead
+        %tr
+          %th Email
+          %th Password
+          %th Signature
+          %th Created at
+          %th Updated at
+          %th
+          %th
+      %tbody
+        - @users.each do |manage_user|
+          %tr
+            %td{"data-title"=>"Email"}= manage_user.email
+            %td{"data-title"=>"Password"}= manage_user.encrypted_password
+            %td{"data-title"=>"Signature"}=image_tag("/uploads/"+ manage_user.user_signature.to_s, style: "height:35px")
+            %td{"data-title"=>"Created at"}= manage_user.created_at
+            %td{"data-title"=>"Updated at"}= manage_user.updated_at
+
+            %td= link_to 'Edit', edit_manage_user_path(manage_user), class: 'btn btn-default'
+            %td= link_to 'Destroy', 'manage_users/' + manage_user.id.to_s, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default'

@@ -1,0 +1,81 @@
+<div class="container">
+  <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title">Sign In</div>
+        <div style="float:right; font-size: 80%; position: relative; top:-10px">
+          <%= render "devise/shared/forgot_password" %>
+        </div>
+      </div>
+      <div style="padding-top:30px" class="panel-body">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal") do |f| %>
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "username or email" %>
+            </div>
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "password" %>
+            </div>
+            <% if devise_mapping.rememberable? -%>
+                <div class="input-group">
+                      <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+                </div>
+            <% end -%>
+            <div style="margin-top:10px" class="form-group">
+              <%= f.submit "Sign in", class: "btn btn-default" %>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 control">
+                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                  Don't have an account!
+                  <%= render "devise/shared/sign_up" %>
+                </div>
+              </div>
+            </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title">Sign up</div>
+      </div>
+      <div style="padding-top:30px" class="panel-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "form-horizontal") do |f| %>
+            <%= devise_error_messages! %>
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "username or email" %>
+            </div>
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "password" %>
+            </div>
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "password confirmation" %>
+            </div>
+            <div style="margin-top:10px" class="form-group">
+              <%= f.submit "Sign up", class: "btn btn-default" %>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 control">
+                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                  Already have an account?
+                  <%= render "devise/shared/links" %>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

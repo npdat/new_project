@@ -1,0 +1,29 @@
+.panel-heading
+  .panel-title Editing user
+.panel-body
+  = form_for @user, :url => {:action => 'update'} do |f|
+    - if @user.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+        %ul
+          - @user.errors.full_messages.each do |msg|
+            %li= msg
+    .field
+      %label> Email
+      .input-group{:style=>"margin-bottom: 25px; width: 400px;"}
+        %span.input-group-addon
+          %i.glyphicon.glyphicon-envelope
+        = f.email_field :email, autofocus: true, class: "form-control", placeholder: "username or email"
+    .field
+      %label> Password
+      .input-group{:style=>"margin-bottom: 25px; width: 400px;"}
+        %span.input-group-addon
+          %i.glyphicon.glyphicon-asterisk
+        = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "password"
+    .field
+      %label> Signature
+      .input-group{:style=>"margin-bottom: 25px;"}
+        = f.file_field :upload_file, class: 'btn btn-default'
+    .actions
+      = f.submit 'Save', class: 'btn btn-default'
+      = link_to 'Back', manage_users_path, class: 'btn btn-default'

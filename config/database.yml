@@ -1,0 +1,29 @@
+development:
+  adapter: postgresql
+  pool: 5
+  encoding: unicode
+  database: oktoboard_development
+  username: wallem_admin
+  password: Wallem@dmin1
+  host: localhost
+  port: 5432
+
+test:
+  adapter: postgresql
+  pool: 5
+  encoding: unicode
+  database: oktoboard_test
+  username: wallem_admin
+  password: Wallem@dmin1
+  host: localhost
+  port: 5432
+
+production:
+  adapter: postgresql
+  pool: 5
+  encoding: unicode
+  database: oktoboard_production
+  username: wallem_admin
+  password: Wallem@dmin1
+  host: localhost
+  port: 5432

@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Port code:
+  = @port.port_code
+%p
+  %b Name:
+  = @port.name
+%p
+  %b Geo:
+  = @port.geo
+%p
+  %b Country:
+  = @port.country
+
+= link_to 'Edit', edit_port_path(@port)
+\|
+= link_to 'Back', ports_path

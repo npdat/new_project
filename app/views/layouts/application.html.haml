@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title OktoBoard
+    = stylesheet_link_tag    'application', :media => 'all'
+    = javascript_include_tag 'application'
+    %link{:href=>"http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css",:rel=>"stylesheet"}
+    %script{:src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
+    %link{:rel=>"stylesheet",:href=>"http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"}
+    %script{:ype=>"text/javascript",:src=>"http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"}
+    %script{:type=>"text/javascript", :src=>"http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"}
+    = csrf_meta_tags
+  %body{class: controller.controller_name}
+    .container
+      =render 'layouts/header'
+      .panel.panel-default
+        &nbsp;
+        = yield
+      = render 'layouts/footer'

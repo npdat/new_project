@@ -1,0 +1,44 @@
+%h1 Listing boarding_documents
+
+%table
+  %tr
+    %th Name
+    %th Gender
+    %th Position
+    %th Birthday
+    %th Birthday place
+    %th Passport
+    %th Port
+    %th Flight ticket
+    %th Is flight
+    %th Time arrive
+    %th Status
+    %th User
+    %th Remark
+    %th
+    %th
+    %th
+
+  - @boarding_documents.each do |boarding_document|
+    %tr
+      %td= boarding_document.name
+      %td= boarding_document.gender
+      %td= boarding_document.position
+      %td= boarding_document.birthday
+      %td= boarding_document.birthday_place
+      %td= boarding_document.passport
+      %td= boarding_document.port
+      %td= boarding_document.flight_ticket
+      %td= boarding_document.is_flight
+      %td= boarding_document.time_arrive
+      %td= boarding_document.status_id
+      %td= boarding_document.user
+      %td= boarding_document.remark
+      %td= link_to 'Show', boarding_document
+      %td= link_to 'Edit', edit_boarding_document_path(boarding_document)
+      %td= link_to 'Print', boarding_document_path(boarding_document, format:'pdf')
+      %td= link_to 'Destroy', boarding_document, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Boarding document', new_boarding_document_path

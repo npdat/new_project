@@ -1,0 +1,28 @@
+.batch
+  .panel.panel-primary
+    .panel-heading.clickable{"data-toggle"=>"collapse"}
+      %h3.panel-title
+        Batch
+        = batches.length
+      %span.pull-right
+        %i.glyphicon.glyphicon-minus
+    .panel-body
+      #no-more-tables
+        %table#table-batch.table.table-striped{:cellspacing=>'0', :width=>"100%"}
+          %thead
+            %tr
+              %th{:width=>"20%"}
+              %th{:width=>"15%"}
+              %th{:width=>"15%"}
+              %th{:width=>"15%"}
+              %th{:width=>"15%"}
+              %th{:width=>"20%"}
+          %tbody
+            - batches.each do |batch|
+              %tr
+                %td{"data-title"=>"Name"}= batch[1][:name]
+                %td{"data-title"=>"ID Card"}= batch[1][:gender]
+                %td{"data-title"=>"Passport"}= batch[1][:position]
+                %td{"data-title"=>"Email"}= batch[1][:birthday]
+                %td{"data-title"=>"Website"}= batch[1][:birthday_place]
+                %td{"data-title"=>"Message"}= batch[1][:passport]

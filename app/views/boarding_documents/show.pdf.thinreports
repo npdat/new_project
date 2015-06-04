@@ -1,0 +1,11 @@
+report.start_new_page do |page|
+  page.values name: @boarding_document.name,
+              port: @boarding_document.port.name,
+              time_arrive: @boarding_document.time_arrive.strftime("%v at %I:%M%p"),
+              flight_ticket: @boarding_document.flight_ticket,
+              created_at: @boarding_document.created_at.strftime("%v"),
+              nationality: @nationality.name,
+              birthday: @boarding_document.birthday.strftime("%v"),
+              birthday_place:@boarding_document.birthday_place.strftime("%v"),
+              passport: @boarding_document.passport
+end

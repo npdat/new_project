@@ -1,0 +1,19 @@
+.single
+  #no-more-tables
+    %table#table-batch.table.table-striped{:cellspacing=>'0', :width=>"100%"}
+      %thead
+        %tr
+          %th{:width=>"20%"}
+          %th{:width=>"15%"}
+          %th{:width=>"15%"}
+          %th{:width=>"15%"}
+          %th{:width=>"15%"}
+          %th{:width=>"20%"}
+      %tbody
+        %tr
+          %td{"data-title"=>"Name"}= batches[0][:name]
+          %td{"data-title"=>"ID Card"}= batches[0][:gender]
+          %td{"data-title"=>"Passport"}= batches[0][:position]
+          %td{"data-title"=>"Email"}= batches[0][:birthday]
+          %td{"data-title"=>"Website"}= batches[0][:birthday_place]
+          %td{"data-title"=>"Message"}= batches[0][:passport]
